@@ -12,4 +12,15 @@ if(cmd1 === 'new'){
     }
 } else if(cmd1 === 'delete'){
     console.log('Deleting Note')
+    if(cmd2.startsWith('title')){
+        notes.deleteNote(cmd2.split('=')[1]);
+    }
+} else if(cmd1 === 'list'){
+    console.log('Listing Notes')
+    notes.allNotes();
+} else if(cmd1 === 'find'){
+    console.log('Finding Note')
+    if(cmd2.startsWith('title')){
+        notes.findNote(cmd2.split('=')[1]);
+    }
 }
